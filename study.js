@@ -298,3 +298,37 @@ function outerFunction() {
 console.log(outerVar); // Accessible
 console.log(innerVar); // Not accessible (ReferenceError)
   
+//Closures
+
+/*A closure is a function that "encloses" its own lexical
+scope, including the variables and functions declared in 
+that scope, even after the outer function has finished 
+executing. In other words, a closure allows a function 
+to maintain access to its parent's scope, even when 
+the parent function is no longer in the call stack. */
+function outerFunction() {
+    const outerVar = "I'm from outer";
+  
+    function innerFunction() {
+      console.log(outerVar); // Accesses outerVar from the parent's scope
+    }
+  
+    return innerFunction; // Return the inner function
+  }
+  
+  const closure = outerFunction(); // Store the inner function (closure)
+  closure(); // Calls the inner function, which still has access to outerVar
+
+  
+
+
+  //-----------------RROMISES---------------------
+
+  /*Promises in JavaScript are a powerful tool for 
+  managing asynchronous operations. They help simplify 
+  and handle asynchronous code in a more organized and 
+  readable manner. Promises represent a value that might 
+  not be available yet but will be at some point in the f
+  uture, allowing you to work with asynchronous operations 
+  like network requests, file handling, and timeouts */
+  
