@@ -108,7 +108,8 @@ console.log(fruits); // Output: ["apple", "banana", "strawberry"]
 
 
 /*Array Methods:
-JavaScript provides a wide range of array methods for manipulating arrays. Some commonly used methods include:
+JavaScript provides a wide range of array methods for manipulating arrays.
+ Some commonly used methods include:
 push(): Add elements to the end of an array.
 pop(): Remove the last element from an array.
 shift(): Remove the first element from an array.
@@ -126,3 +127,70 @@ includes(): Check if an array includes a specific element.
 length: Property that returns the number of elements in an array.
 javascript
  */
+
+
+//----------------OBJECTS------------------------
+
+/*Objects are collections of key-value pairs, where 
+the keys are strings (or symbols) and the values can be 
+of any data type, including other objects */
+
+// Creating an empty object
+const persons = {};
+
+// Creating an object with properties
+const personTwo = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
+
+//Constructor Function
+function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+  
+const personThree = new Person("John", "Doe", 30);
+
+//ES6 Class Syntax
+class Person {
+    constructor(firstName, lastName, age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+    }
+  }
+  
+const person = new Person("John", "Doe", 30);
+  
+//Accessing Object Properties
+console.log(person.firstName); // Output: "John"
+console.log(person["lastName"]); // Output: "Doe"
+
+//Modifying Object Properties
+person.age = 35;
+person["firstName"] = "Alice";
+
+//Adding and Deleting Object Properties
+person.city = "New York"; // Adding a new property
+delete person.age; // Deleting the "age" property
+
+//Object Destructuring
+const { firstName, lastName } = person;
+console.log(firstName); // Output: "John"
+console.log(lastName); // Output: "Doe"
+
+
+//Object Methods
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  };
+  
+  console.log(person.fullName()); // Output: "John Doe"
+  
