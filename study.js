@@ -193,4 +193,58 @@ const person = {
   };
   
   console.log(person.fullName()); // Output: "John Doe"
+
+
+
   
+//-----------------DOM--------------
+
+/*The Document Object Model (DOM) is a programming 
+interface for web documents. It represents the 
+structure of an HTML or XML document as a tree-like 
+data structure in which each node represents a part 
+of the document, such as elements, attributes, and text.
+The DOM provides a way for programmers to interact 
+with and manipulate web pages using JavaScript.*/
+
+//Accessing DOM Elements
+// Get an element by its ID
+const element = document.getElementById("myElement");
+
+// Get elements by class name
+const elementsByClass = document.getElementsByClassName("myClass");
+
+// Get elements by tag name
+const elementsByTag = document.getElementsByTagName("div");
+
+
+//Modifying Elements
+element.textContent = "New text content";
+
+//Creating and Appending Elements
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "This is a new paragraph.";
+
+document.body.appendChild(newParagraph);
+
+
+//Evant Handling
+const button = document.getElementById("myButton");
+button.addEventListener("click", function() {
+  alert("Button clicked!");
+});
+
+//Manipulating CSS
+element.style.color = "red";
+element.classList.add("highlight");
+
+
+//Manipulating Attributes
+const link = document.getElementById("myLink");
+const hrefValue = link.getAttribute("href");
+link.setAttribute("href", "https://example.com");
+
+//Removing Elements
+const parent = document.getElementById("parentElement");
+const child = document.getElementById("childElement");
+parent.removeChild(child);
