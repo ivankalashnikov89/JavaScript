@@ -248,3 +248,53 @@ link.setAttribute("href", "https://example.com");
 const parent = document.getElementById("parentElement");
 const child = document.getElementById("childElement");
 parent.removeChild(child);
+
+
+
+
+
+//--------------CLOSURES AND SCOPES---------------
+
+/*Closures and scopes are fundamental concepts 
+in JavaScript that play a crucial role in how 
+variables are accessed and maintained in your code. */
+
+//Scopes
+
+/*A scope in JavaScript refers to the context in which 
+variables and functions are declared and accessed. 
+JavaScript has two main types of scope */
+
+//Global Scope
+/*Variables and functions declared outside of any 
+function or block have global scope. They can be 
+accessed from anywhere in your code */
+const globalVar = "I'm global";
+
+function globalFunction() {
+  console.log(globalVar); // Accessible
+}
+
+//Local(Function) Scope
+/*Variables declared inside a function have local scope. 
+They can only be accessed within that function. */
+function localFunction() {
+    const localVar = "I'm local";
+    console.log(localVar); // Accessible
+  }
+
+/*Scopes are hierarchical, meaning that an inner scope 
+has access to variables in outer scopes, but not vice 
+versa. This concept is known as "lexical scoping." */
+const outerVar = "I'm outer";
+
+function outerFunction() {
+    const innerVar = "I'm inner";
+  
+    console.log(outerVar); // Accessible
+    console.log(innerVar); // Accessible
+  }
+  
+console.log(outerVar); // Accessible
+console.log(innerVar); // Not accessible (ReferenceError)
+  
