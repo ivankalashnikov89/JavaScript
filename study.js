@@ -85,4 +85,44 @@ sayHello(); // Output: Hello!
 console.log(square(5)); // Output: 25
 greet("Alice"); // Output: Hello, Alice!
 
-  
+
+//-------------------ARRAYS---------------------
+/* Arrays are a fundamental data structure in JavaScript 
+used to store and manipulate collections of values. 
+They are ordered lists of elements that you can access, 
+modify, and manipulate in various ways.*/
+
+// Creating an empty array
+const emptyArray = [];
+
+// Creating an array with values
+const fruits = ["apple", "banana", "cherry"];
+
+//Accessing Elements:
+console.log(fruits[0]); // Output: "apple"
+console.log(fruits[1]); // Output: "banana"
+
+//Modifying Elements:
+fruits[2] = "strawberry";
+console.log(fruits); // Output: ["apple", "banana", "strawberry"]
+
+
+/*Array Methods:
+JavaScript provides a wide range of array methods for manipulating arrays. Some commonly used methods include:
+push(): Add elements to the end of an array.
+pop(): Remove the last element from an array.
+shift(): Remove the first element from an array.
+unshift(): Add elements to the beginning of an array.
+concat(): Combine two or more arrays.
+slice(): Extract a portion of an array.
+splice(): Add or remove elements from any position in an array.
+forEach(): Iterate over each element in an array.
+map(): Create a new array by applying a function to each element in an existing array.
+filter(): Create a new array with elements that pass a certain condition.
+reduce(): Reduce an array to a single value by applying a function cumulatively.
+sort(): Sort the elements of an array.
+indexOf(): Find the index of the first occurrence of an element.
+includes(): Check if an array includes a specific element.
+length: Property that returns the number of elements in an array.
+javascript
+ */
