@@ -316,19 +316,87 @@ function outerFunction() {
     return innerFunction; // Return the inner function
   }
   
-  const closure = outerFunction(); // Store the inner function (closure)
-  closure(); // Calls the inner function, which still has access to outerVar
+const closure = outerFunction(); // Store the inner function (closure)
+closure(); // Calls the inner function, which still has access to outerVar
 
   
 
 
-  //-----------------RROMISES---------------------
+//-----------------RROMISES---------------------
 
-  /*Promises in JavaScript are a powerful tool for 
-  managing asynchronous operations. They help simplify 
-  and handle asynchronous code in a more organized and 
-  readable manner. Promises represent a value that might 
-  not be available yet but will be at some point in the f
-  uture, allowing you to work with asynchronous operations 
-  like network requests, file handling, and timeouts */
+/*Promises in JavaScript are a powerful tool for 
+managing asynchronous operations. They help simplify 
+and handle asynchronous code in a more organized and 
+readable manner. Promises represent a value that might 
+not be available yet but will be at some point in the f
+uture, allowing you to work with asynchronous operations 
+like network requests, file handling, and timeouts */
+
+/*Promise States:
+Promises have three states:
+
+PENDING: The initial state when a promise is created, 
+and the asynchronous operation is in progress.
+FULLFILLED: The state when the asynchronous operation is 
+completed successfully, and the promise has a resolved 
+value.
+REJECTED: The state when an error occurs during 
+the asynchronous operation, and the promise has 
+a reason for failure (an error message or an exception). */
+
+//Creating a Promise
+const myPromise = new Promise((resolve, reject) => {
+    // Asynchronous operation
+    setTimeout(() => {
+      const success = true;
+      if (success) {
+        resolve("Operation succeeded");
+      } else {
+        reject("Operation failed");
+      }
+    }, 1000);
+  });
+
+//Consuming a Promise
+/*Once you have a promise, you can use the then and 
+catch methods to handle its resolution or rejection: */
+
+//THEN:Used for handling the resolved value.
+myPromise.then(result => {
+    console.log("Success:", result);
+  });
+
+//CATCH:Used for handling errors.
+myPromise.catch(error => {
+    console.error("Error:", error);
+  });
   
+//Chaining Promises
+/*Promises can be chained together to perform a sequence 
+of asynchronous operations. You can return a new promise 
+inside a then block to create a chain. */
+const firstPromise = fetch("https://api.example.com/data");
+
+firstPromise
+  .then(response => response.json())
+  .then(data => {
+    console.log("Data fetched:", data);
+    return fetch(data.nextUrl);
+  })
+  .then(response => response.json())
+  .then(nextData => {
+    console.log("Next data fetched:", nextData);
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+
+
+/*Promises are a vital part of modern JavaScript for 
+handling asynchronous code in a more structured and 
+manageable way. They provide a cleaner alternative 
+to callback functions and help improve code readability 
+and maintainability. */
+
+
+//-------------------ASYNC/AWAIT----------------
