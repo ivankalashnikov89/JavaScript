@@ -487,3 +487,98 @@ that simplifies asynchronous programming and makes
 it more accessible to developers, reducing the 
 complexity often associated with handling asynchronous 
 tasks.*/
+
+
+
+/*In JavaScript, modules are a way to organize and 
+encapsulate code into reusable, self-contained units. 
+Modules help manage code complexity, improve maintainability, 
+and prevent naming conflicts. ES6 (ECMAScript 2015) introduced 
+native support for modules in JavaScript. Here's an overview of J
+avaScript modules:
+
+Creating a Module:
+To create a module, you define a file with JavaScript code and use 
+the export keyword to specify which variables, functions, or classes 
+should be made available for other modules to import.*/
+
+//module.js:
+// Exporting variables, functions, or classes
+export const PI = 3.14159265359;
+
+export function square(x) {
+  return x * x;
+}
+
+export class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  area() {
+    return PI * this.radius * this.radius;
+  }
+}
+
+//Importing a Module:
+/*To use the code from a module in another file, 
+you use the import statement to bring in the exported 
+members (variables, functions, or classes) into your 
+current scope.*/
+
+//app.js:
+// Importing from the module
+import { PI, square, Circle } from './module';
+
+console.log(PI); // Output: 3.14159265359
+console.log(square(4)); // Output: 16
+const myCircle = new Circle(3);
+console.log(myCircle.area()); // Output: 28.274333882308138
+
+
+//Exporting Default:
+/*You can export a default value from a module. This is 
+useful when you want to export a single value, such as a 
+configuration object or a function, as the default export.*/
+
+//module.js:
+// Exporting a default value
+const defaultExport = {
+  key1: 'value1',
+  key2: 'value2'
+};
+
+export default defaultExport;
+
+//app.js:
+// Importing the default export
+import myDefaultExport from './module';
+
+console.log(myDefaultExport.key1); // Output: "value1"
+
+
+//Module Types:
+//There are two types of modules in JavaScript:
+
+/*ESM (ECMAScript Modules): These are the native 
+JavaScript modules introduced in ES6 and are commonly 
+used in modern web development. You can use ESM in both 
+browser and Node.js environments by using the .mjs file 
+extension for module files.
+CommonJS Modules: CommonJS is an older module system 
+used in Node.js. You can use require() to import CommonJS 
+modules, and they typically use the .js file extension. 
+However, they are not supported natively in browsers.
+
+
+Module Bundlers:
+In complex web applications, you often use module bundlers 
+like Webpack, Rollup, or Parcel to bundle multiple modules 
+into a single file for production. These bundlers also 
+handle transpilation (e.g., converting ES6 code to ES5) 
+and other optimizations.
+
+Modules are a fundamental part of modern JavaScript development, 
+allowing you to structure your code in a more organized and 
+maintainable way while preventing global scope pollution. They 
+make it easier to manage dependencies and promote code reusability.*/
