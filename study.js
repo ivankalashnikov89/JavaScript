@@ -250,6 +250,78 @@ const child = document.getElementById("childElement");
 parent.removeChild(child);
 
 
+//-----------------ES6---------------------------
+
+//1.Arrow Functions: 
+/*Arrow functions provide a concise syntax for defining 
+functions, especially for one-liners. They also have 
+a lexically scoped this, making them useful for certain 
+callback scenarios.*/
+const add = (a, b) => a + b;
+
+//2.Block-Scoped Variables: 
+/*let and const allow for block-scoped variable 
+declarations, addressing issues with var. const is 
+used for constants, and let for mutable variables.*/
+let x = 10;
+const PII = 3.14;
+
+//3.Template Literals: 
+/*Template literals enable string interpolation and 
+multiline strings using backticks (`).*/
+const yourName = "Alice";
+const greeting = `Hello, ${name}!`;
+
+//4.Destructuring: 
+/*Destructuring enables you to extract values from 
+objects and arrays into distinct variables.*/
+const { yourFirstName, yourLastName } = person;
+const [first, second] = numbers;
+
+//5.Spread and Rest Operators: 
+/*Spread (...) can be used to spread elements in an 
+array or properties of an object. The rest parameter 
+allows you to collect multiple arguments into an array.*/
+const arr = [1, 2, 3];
+const copy = [...arr];
+function sum(...args) { /* ... */ }
+
+//6.Default Parameters: 
+/*You can set default values for function parameters.*/
+function greet(name = "Guest") { /* ... */ }
+
+//7.Classes: 
+/*ES6 introduced a class syntax that simplifies 
+object-oriented programming in JavaScript.*/
+class Person {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+  
+//8.Modules: 
+/*ES6 introduced native support for modules, allowing 
+you to encapsulate and organize your code into reusable 
+units.*/
+// Exporting in a module
+export function add(a, b) { /* ... */ }
+
+// Importing in another module
+import { add } from "./math";
+
+//9.Promises: 
+/*Promises provide a better way to work with asynchronous 
+code, improving callback hell and making it easier to 
+handle errors.*/
+fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+//10.Symbol: 
+/*Symbols are a new primitive data type used for creating 
+unique property keys in objects.*/
+const uniqueKey = Symbol("unique");
 
 
 
@@ -488,6 +560,8 @@ it more accessible to developers, reducing the
 complexity often associated with handling asynchronous 
 tasks.*/
 
+
+//---------------MODULES--------------
 
 
 /*In JavaScript, modules are a way to organize and 
