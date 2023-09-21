@@ -400,3 +400,55 @@ and maintainability. */
 
 
 //-------------------ASYNC/AWAIT----------------
+/*async/await is a powerful feature in JavaScript 
+introduced with ES2017 (ES8) that simplifies 
+asynchronous code and makes it more readable and easier 
+to work with. async/await is built on top of Promises 
+and provides a more natural way to write asynchronous 
+code that appears synchronous. */
+
+//ASYNC Function
+/*The async keyword is used to declare a function as 
+asynchronous. An async function always returns a Promise,
+which can resolve to a value or reject with an error. 
+Inside an async function, you can use the await keyword 
+to pause the execution until a Promise is resolved. */
+async function fetchData() {
+    // Asynchronously fetch data
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    return data;
+  }
+
+//AWAIT keyword
+/*The await keyword is used inside an async function 
+to pause the execution of that function until a Promise 
+is settled (either resolved or rejected). It allows you 
+to work with Promises in a more linear and 
+synchronous-looking manner. */
+
+//Error Handling
+/*You can use try/catch blocks to handle errors in async 
+functions. If an error occurs during the execution of 
+an await expression, it will reject the Promise, and you 
+can catch and handle the error using catch. */
+async function fetchData() {
+    try {
+      const response = await fetch("https://api.example.com/data");
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  
+//Using async/await with Promises:
+/*async/await can be used with existing Promises. 
+If you have a function that returns a Promise, 
+you can await that Promise inside an async function.*/
+async function someAsyncFunction() {
+    const result = await somePromiseFunction();
+    // ...
+  }
+  
