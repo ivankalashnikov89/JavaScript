@@ -451,4 +451,39 @@ async function someAsyncFunction() {
     const result = await somePromiseFunction();
     // ...
   }
+
+//Sequential and Parallel Execution
+/*async/await makes it easy to perform asynchronous 
+operations sequentially, where one operation depends 
+on the result of the previous one. It also simplifies 
+parallel execution when multiple asynchronous operations 
+can run concurrently. */
+async function fetchDataSequentially() {
+    const data1 = await fetchData1();
+    const data2 = await fetchData2();
+    return [data1, data2];
+  }
   
+async function fetchDataConcurrently() {
+    const [data1, data2] = await Promise.all([fetchData1(), fetchData2()]);
+    return [data1, data2];
+  }
+  
+  
+//Benefits:
+/*Improved readability: async/await makes asynchronous 
+code look more like synchronous code, which can be 
+easier to understand.
+Error handling: It simplifies error handling with 
+try/catch, making it easier to handle and propagate 
+errors.
+Sequential and parallel execution: It provides 
+flexibility for both sequential and parallel 
+asynchronous operations.
+Works well with Promises: You can use async/await 
+alongside existing Promise-based code.
+async/await is a valuable addition to JavaScript 
+that simplifies asynchronous programming and makes 
+it more accessible to developers, reducing the 
+complexity often associated with handling asynchronous 
+tasks.*/
