@@ -1,4 +1,4 @@
-//My JavaScript Journey
+//----------------MY JAVASCRIPT JOURNEY
 
 //to print output
 console.log("Hello");
